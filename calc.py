@@ -20,7 +20,7 @@ win = tk.Tk()
 # ウィンドウタイトルを設定
 win.title("めちゃシンプルな電卓")
 # ウィンドウサイズの設定
-win.geometry("400x450")
+win.geometry("400x460")
 # ディスプレイ部分 --- (*5)
 disp = tk.Entry(win, font=('', 20), justify="center")
 disp.pack(fill='x')
