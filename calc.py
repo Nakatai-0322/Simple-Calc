@@ -1,8 +1,9 @@
 from tkinter import *
 # 画面表示
-root = Tk()
-# Window name
-root.title("電卓")
+def new_func():
+    root = Tk()
+    return root
+root = new_func()
 # 文字入力機能実装
 def func(v):
     var1.set(var1.get() + v)
@@ -17,15 +18,15 @@ def result():
     try:
         var1.set(eval(var1.get()))
     except SyntaxError:
-        var1.set("構文エラーが発生しました。式を再入力してください。")
+        var1.set("エラーが発生しました。計算不可能です！")
     except ZeroDivisionError:
-        var1.set("整数を0で割りました。演算が定義できません！")
+        var1.set("数を0で割りました。演算が定義できません！")
     except NameError:
         var1.set("定義されていない変数を使用しています。")
 var1 = StringVar()
 label = Label(root, textvariable=var1, fg="#000000", bg="#FFFFFF", anchor=E, height=3)# 画面部分表示色指定
 label.grid(row=0, column=0, columnspan=4, sticky="EW") 
-root.title("電卓 v.1.0")# タイトル指定
+root.title("電卓 Beta 2.0")# タイトル指定
 # 1列目実装
 btn_c = Button(root, text="C", command=clear, width=10, height=3)
 btn_c.grid(row=1, column=0)
